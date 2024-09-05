@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("math.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            color: rgb(235, 245, 234);
+            font-size: 26px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .calculator-container {
+            background: rgba(8, 32, 2, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+        }
+        .btn-group-horizontal .btn {
+            margin-right: 10px;
+        }
+        .btn-group-horizontal {
+            display: flex;
+            justify-content: center;
+        }
+        .btn-add {
+            background-color: #16a0ea; /* Pink */
+        }
+        .btn-subtract {
+            background-color: #79e15f; /* Blue */
+        }
+        .btn-multiply {
+            background-color: #cdd921; /* Yellow */
+        }
+        .btn-division {
+            background-color: #e596d5; /* Purple */
+        }
+        .btn-clear {
+            background-color: #f43636; /* Red */
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Calculator</h1>
+        <div class="form-group">
+            <label for="num1">First Number:</label>
+            <input type="number" id="num1" class="form-control" placeholder="Enter first number">
+        </div>
+        <div class="form-group">
+            <label for="num2">Second Number:</label>
+            <input type="number" id="num2" class="form-control" placeholder="Enter second number">
+        </div>
+        
+        <h2>Result:</h2>
+        <p id="result">0</p>
+
+        <div class="btn-group-horizontal" role="group" aria-label="Basic example">
+            <button class="btn btn-add" onclick="calculate('add')">+</button>
+            <button class="btn btn-subtract" onclick="calculate('subtract')">−</button>
+            <button class="btn btn-multiply" onclick="calculate('multiply')">×</button>
+            <button class="btn btn-division" onclick="calculate('division')">÷</button>
+        </div>
+        
+        <button class="btn btn-clear" onclick="clearFields()">Clear</button>
+    </div>
+
+    <script>
+        function calculate(operation) {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var result;
+
+            switch (operation) {
+                case 'add':
+                    result = num1 + num2;
+                    break;
+                case 'subtract':
+                    result = num1 - num2;
+                    break;
+                case 'multiply':
+                    result = num1 * num2;
+                    break;
+                case 'division':
+                    result = num2 !== 0 ? num1 / num2 : 'Cannot divide by zero';
+                    break;
+                default:
+                    result = 'Invalid operation';
+            }
+
+            document.getElementById('result').innerText = result;
+        }
+
+        function clearFields() {
+            document.getElementById('num1').value = '';
+            document.getElementById('num2').value = '';
+            document.getElementById('result').innerText = '0';
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
