@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kashmir - Paradise on Earth</title>
+    <style>
+        body {
+            background-color: #111; /* Dark background for better visibility */
+            color: ghostwhite;
+        }
+        .image {
+            box-shadow: inset;
+            height: 700px;
+            float: right;
+            margin-right: 10px;
+        }
+        p {
+            font-size: large;
+        }
+        h2 {
+            text-align: center;
+        }
+        .form-container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title" onclick="change()">Kashmir: A Land of Beauty</h1>
+    <h2>The Crown of India</h2>
+    <img class="image" src="https://www.honeymoonbug.com/blog/wp-content/uploads/2017/07/sonamarg1-min.jpg" alt="Scenic view of Kashmir">
+    
+    <p>Kashmir, often referred to as 'Paradise on Earth', is renowned for its breathtaking landscapes. Nestled in the northern region of India, it is surrounded by majestic mountains, lush valleys, and pristine lakes, making it one of the most beautiful places in the world.</p>
+    <p>From the shimmering Dal Lake in Srinagar to the alpine meadows of Gulmarg, Kashmir offers a diverse range of natural wonders. Visitors can enjoy the serene beauty, explore the rich culture, or partake in various adventurous activities like trekking, skiing, and boating. The people of Kashmir are known for their warm hospitality, and their unique traditions are reflected in the local crafts, music, and cuisine.</p> 
+    <p>Kashmir is also home to a wide array of flora and fauna, contributing to its rich biodiversity. This region plays a vital role in India's cultural and historical tapestry, with influences from Hindu, Buddhist, and Islamic traditions interwoven into its identity. For travelers, Kashmir is not just a destination, but an experience of tranquility and timeless beauty.</p>
+
+    <button id="changeTextButton" onclick="changeImage()">Next Image</button>
+    <p id="parentNode" onclick="addTextNode()" style="color:blue;">Click to know a fun fact about Kashmir!</p>
+    <button id="removeButton" onclick="removeNode()">Delete info</button>
+
+    <div class="form-container">
+        <form id="sampleForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username">
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <br><br>
+            <button type="button" id="submitForm">Submit Form</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
